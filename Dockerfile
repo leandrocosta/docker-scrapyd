@@ -12,6 +12,8 @@ RUN apt-get update
 # Install scrapyd
 RUN apt-get install -y scrapyd
 
+RUN locale-gen --lang pt_BR
+
 # Expose scrapyd default port
 EXPOSE 6800
 
