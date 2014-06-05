@@ -5,8 +5,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Add scrapy APT repository
-ADD http://archive.scrapy.org/ubuntu/archive.key /tmp/scrapy.key
-RUN apt-key add /tmp/scrapy.key
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 627220E7
 RUN echo "deb http://archive.scrapy.org/ubuntu scrapy main" > /etc/apt/sources.list.d/scrapy.list
 RUN apt-get update
 
