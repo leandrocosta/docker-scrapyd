@@ -10,12 +10,15 @@ RUN echo "deb http://archive.scrapy.org/ubuntu scrapy main" > /etc/apt/sources.l
 RUN apt-get update
 
 # Install scrapyd
-RUN apt-get install -y scrapyd
+RUN apt-get install -y scrapyd-0.16
 
 RUN locale-gen --lang pt_BR
 
 # Expose scrapyd default port
-EXPOSE 6800
+#EXPOSE 6800
 
 # Set scrapyd as run entrypoint
-ENTRYPOINT ["/usr/bin/scrapyd"]
+#ENTRYPOINT ["/usr/bin/scrapyd"]
+
+VOLUME ["/var/log/scrapyd"]
+EXPOSE 6800
